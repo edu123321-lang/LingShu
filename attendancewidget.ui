@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AttendanceWidget</class>
+ <widget class="QWidget" name="AttendanceWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;考勤管理&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <layout class="QVBoxLayout" name="leftColLayout">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="queryGroupBox">
+         <property name="title">
+          <string>查询条件</string>
+         </property>
+         <layout class="QVBoxLayout" name="queryLayout">
+          <item>
+           <layout class="QHBoxLayout" name="dateLayout">
+            <item>
+             <widget class="QLabel" name="dateLabel">
+              <property name="text">
+               <string>查询日期</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDateEdit" name="dateEdit">
+              <property name="displayFormat">
+               <string>yyyy-MM-dd</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshBtn">
+            <property name="text">
+             <string>刷新查询</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="timeRuleGroupBox">
+         <property name="title">
+          <string>考勤时间规则</string>
+         </property>
+         <layout class="QVBoxLayout" name="timeRuleLayout">
+          <item>
+           <layout class="QHBoxLayout" name="signInTimeLayout">
+            <item>
+             <widget class="QLabel" name="signInLabel">
+              <property name="text">
+               <string>签到截止</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTimeEdit" name="signInTimeEdit">
+              <property name="displayFormat">
+               <string>HH:mm</string>
+              </property>
+              <property name="time">
+               <time>
+                <hour>9</hour>
+                <minute>0</minute>
+                <second>0</second>
+               </time>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="signOffTimeLayout">
+            <item>
+             <widget class="QLabel" name="signOffLabel">
+              <property name="text">
+               <string>签退起始</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTimeEdit" name="signOffTimeEdit">
+              <property name="displayFormat">
+               <string>HH:mm</string>
+              </property>
+              <property name="time">
+               <time>
+                <hour>18</hour>
+                <minute>0</minute>
+                <second>0</second>
+               </time>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="saveTimeRuleBtn">
+            <property name="text">
+             <string>保存时间规则</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="timeTipLabel">
+            <property name="styleSheet">
+             <string notr="true">color: #718096; font-size: 12px;</string>
+            </property>
+            <property name="text">
+             <string>超过签到截止时间签到将标记为迟到；未到签退起始时间不允许签退。</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="recordOpsGroupBox">
+         <property name="title">
+          <string>记录操作</string>
+         </property>
+         <layout class="QVBoxLayout" name="recordOpsLayout">
+          <item>
+           <widget class="QPushButton" name="editRecordBtn">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #3182ce,
+		stop:1 #4299e1);
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #2c5282,
+		stop:1 #3182ce);
+}
+QPushButton:disabled {
+	background: #cbd5e0;
+	color: #a0aec0;
+}</string>
+            </property>
+            <property name="text">
+             <string>✏️ 修改选中记录</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deleteRecordBtn">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #e53e3e,
+		stop:1 #f56565);
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #c53030,
+		stop:1 #e53e3e);
+}
+QPushButton:disabled {
+	background: #cbd5e0;
+	color: #a0aec0;
+}</string>
+            </property>
+            <property name="text">
+             <string>🗑️ 删除选中记录</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="recordOpsTipLabel">
+            <property name="styleSheet">
+             <string notr="true">color: #718096; font-size: 12px;</string>
+            </property>
+            <property name="text">
+             <string>在右侧表格中选中一条记录后，可以修改或删除该签到记录。</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="leftVSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <column>
+        <property name="text">
+         <string>卡号</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>姓名</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>日期</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>类型</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>备注</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QPushButton" name="clearTableBtn">
+       <property name="text">
+        <string>清除表中显示</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

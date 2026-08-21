@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SerialWidget</class>
+ <widget class="QWidget" name="SerialWidget">
+  <!-- 匹配外层stackedWidget尺寸1580*840 -->
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1580</width>
+    <height>840</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+
+  <!-- 左侧串口设置分组框 放大加宽 -->
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>60</y>
+     <width>320</width>
+     <height>720</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>串口设置</string>
+   </property>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>30</y>
+      <width>290</width>
+      <height>560</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>35</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>38</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>串口号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxPort">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>38</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>38</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>波特率</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxBaud">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>38</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>38</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>数据位</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxDataBits">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>38</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_10">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>38</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>停止位</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxStopBits">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>38</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>38</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>校验位</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxParity">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>38</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>38</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>流控制</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxFlowControl">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>38</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <!-- 底部打开/清除按钮放大 -->
+   <widget class="QPushButton" name="openCloseBtn">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>630</y>
+      <width>120</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>打开</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearLogBtn">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>630</y>
+      <width>120</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>清除日志</string>
+    </property>
+   </widget>
+  </widget>
+
+  <!-- 中间数据日志分组框，同步放大，与左侧高度对齐 -->
+  <widget class="QGroupBox" name="groupBoxLog">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>60</y>
+     <width>1060</width>
+     <height>720</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>数据日志</string>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <widget class="QPlainTextEdit" name="plainTextEditLog">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>30</y>
+      <width>1030</width>
+      <height>670</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+
+  <!-- 底部发送区域整体放大，水平居中放置 -->
+  <widget class="QLabel" name="sendDataLabel">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>790</y>
+     <width>90</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>数据发送</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="sendLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>780</y>
+     <width>820</width>
+     <height>55</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sendButton">
+   <property name="geometry">
+    <rect>
+     <x>1380</x>
+     <y>780</y>
+     <width>100</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FaceAttendanceDialog</class>
+ <widget class="QDialog" name="FaceAttendanceDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>人脸识别考勤</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="lblTitle">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;人脸识别考勤系统&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutMain">
+     <item>
+      <widget class="QLabel" name="lblCamera">
+       <property name="minimumSize">
+        <size>
+         <width>640</width>
+         <height>480</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #1a202c; border: 2px solid #4a5568; border-radius: 12px;</string>
+       </property>
+       <property name="text">
+        <string>摄像头画面</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayoutRight">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBoxInfo">
+         <property name="title">
+          <string>识别信息</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutInfo">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>当前用户：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblUserName">
+            <property name="styleSheet">
+             <string notr="true">font-size: 16px; font-weight: bold; color: #2b6cb0; padding: 8px; background-color: #ebf8ff; border-radius: 8px;</string>
+            </property>
+            <property name="text">
+             <string>未识别</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxActions">
+         <property name="title">
+          <string>考勤操作</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutActions">
+          <property name="spacing">
+           <number>8</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnCheckIn">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: #38a169;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: #2f855a;
+}
+QPushButton:pressed {
+	background-color: #276749;
+}</string>
+            </property>
+            <property name="text">
+             <string>📷 人脸识别签到</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCheckOut">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: #805ad5;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: #6b46c1;
+}
+QPushButton:pressed {
+	background-color: #553c9a;
+}</string>
+            </property>
+            <property name="text">
+             <string>📷 人脸识别签退</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnRegister">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>➕ 注册新用户人脸</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnClose">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: #e53e3e;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: #c53030;
+}</string>
+            </property>
+            <property name="text">
+             <string>关闭</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblStatus">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #f7fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 8px; font-size: 14px;</string>
+     </property>
+     <property name="text">
+      <string>就绪</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

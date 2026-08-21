@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>userAttendanceWidget</class>
+ <widget class="QWidget" name="userAttendanceWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:32pt; font-weight:600;&quot;&gt;我的考勤&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="statusLabel">
+     <property name="text">
+      <string>今日状态：未签到</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 16px; font-weight: bold; padding: 10px; border-radius: 10px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="mainLayout">
+     <item>
+      <layout class="QVBoxLayout" name="leftLayout">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="cardGroupBox">
+         <property name="title">
+          <string>刷卡考勤</string>
+         </property>
+         <layout class="QVBoxLayout" name="cardLayout">
+          <item>
+           <layout class="QHBoxLayout" name="serialSelectLayout">
+            <item>
+             <widget class="QLabel" name="serialPortLabel">
+              <property name="text">
+               <string>串口：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="serialPortCombo">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="refreshSerialBtn">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>🔄 刷新</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="baudSelectLayout">
+            <item>
+             <widget class="QLabel" name="baudLabel">
+              <property name="text">
+               <string>波特率：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="baudRateCombo">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <item>
+               <property name="text">
+                <string>115200 (常用)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>9600</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>19200</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>38400</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>57600</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="baudSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cardAttendanceBtn">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #38b2ac,
+		stop:1 #4fd1c5);
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 12px;
+	min-height: 50px;
+}
+QPushButton:hover {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #319795,
+		stop:1 #38b2ac);
+}</string>
+            </property>
+            <property name="text">
+             <string>💳 开始刷卡考勤</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="cardStatusLabel">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string>就绪</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">padding: 8px; border-radius: 8px; background-color: #f7fafc;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="cardTipLabel">
+            <property name="styleSheet">
+             <string notr="true">color: #718096; font-size: 12px;</string>
+            </property>
+            <property name="text">
+             <string>点击上方按钮后，将您的考勤卡放在读卡器上即可完成签到/签退。再次点击可停止刷卡。</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="faceGroupBox">
+         <property name="title">
+          <string>刷脸考勤</string>
+         </property>
+         <layout class="QVBoxLayout" name="faceLayout">
+          <item>
+           <widget class="QPushButton" name="faceAttendanceBtn">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #667eea,
+		stop:1 #764ba2);
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 12px;
+	min-height: 50px;
+}
+QPushButton:hover {
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+		stop:0 #5a67d8,
+		stop:1 #667eea);
+}</string>
+            </property>
+            <property name="text">
+             <string>📷 刷脸考勤</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="faceTipLabel">
+            <property name="styleSheet">
+             <string notr="true">color: #718096; font-size: 12px;</string>
+            </property>
+            <property name="text">
+             <string>点击上方按钮启动摄像头，正对摄像头即可完成人脸签到/签退。首次使用请先注册人脸。</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="leftSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="recordTable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <column>
+        <property name="text">
+         <string>日期</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>时间</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>类型</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>备注</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="refreshBtn">
+     <property name="text">
+      <string>刷新记录</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
